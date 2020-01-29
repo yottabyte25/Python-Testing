@@ -17,21 +17,20 @@ import tkinter as tk
 root = tk.Tk()
 
 def app():
-    menu_welcoming = tk.Label(root, text="Welcome to the guessing game!!!", font=("Impact", 32))
-    menu_welcoming2 = tk.Label(root, text="This game is still in devolpment so please beware of bugs.", font=("Impact", 26))
-    menu_welcoming3 = tk.Label(root, text="This is in its Alpha stage.", font=("Impact", 26))
-    menu_welcoming4 = tk.Label(root, text = "Press the button below to begin", font=("Impact", 26))
+    menu_welcoming = tk.Label(root, text="Welcome to the guessing game!!!", font=("Impact", 32), fg = "green", bg = "black")
+    menu_welcoming2 = tk.Label(root, text="This game is still in devolpment so please beware of bugs.", font=("Impact", 26), fg = "green", bg = "black")
+    menu_welcoming3 = tk.Label(root, text="This is in its Alpha stage.", font=("Impact", 26), fg = "green", bg = "black")
+    menu_welcoming4 = tk.Label(root, text = "Press the button below to begin", font=("Impact", 26), fg = "green", bg = "black")
     begin_button = tk.Button(root, text = "Begin", bd = 25, command = new_game)
     
     menu_welcoming.grid(row = 1, column = 1)
     menu_welcoming2.grid(row = 2, column = 1)
     menu_welcoming3.grid(row = 3, column = 1)
     menu_welcoming4.grid(row = 4, column = 1)
-    begin_button.grid(row = 5, column = 3)
+    begin_button.grid(row = 5, column = 3, columnspan = 2)
 
 def new_game():
     # uses the input from the Entry box
-
 
     def use_input():
         guess_count = 0
@@ -40,10 +39,10 @@ def new_game():
         retrieved_inp = E1.get()
         if retrieved_inp == "d":
             secret_word = "delta"
-            Label_D = tk.Label(root, text="The word begins with the letter you typed", font=("Courier", 16))
+            Label_D = tk.Label(root, text="The word begins with the letter you typed", font=("Impact", 16), fg = "green", bg = "black")
             E3 = tk.Entry(root, bd = 5)
             guess_inp = E3.get()
-            Button_0 = tk.Button(root, text = "Enter", font=("Courier", 8), padx = 10, pady = 10, bd = 3, command = guess_inp)
+            Button_0 = tk.Button(root, text = "Enter", font=("Courier", 8), padx = 10, pady = 10, bd = 3, command = guess_inp, fg = "green", bg = "black")
 
             E3.grid(row = 3, column = 1, columnspan = 1)
             Label_D.grid(row = 3, column = 0, columnspan = 1)
@@ -133,5 +132,8 @@ menubar.add_cascade(label="Quick Menu", menu=filemenu)
 filemenu.add_command(label="New Game", command=app)
 filemenu.add_command(label="Exit Game", command=exitgame)
 root.config(menu=menubar)
+
+#background
+root.configure(background = "black")
 
 root.mainloop()

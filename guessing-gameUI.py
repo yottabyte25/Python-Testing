@@ -187,7 +187,7 @@ def application():
 
     
 def exitgame():
-    pass
+    root.destroy()
 
 #title
 root.title("Guessing game")

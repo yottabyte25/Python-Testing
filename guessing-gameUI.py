@@ -1,6 +1,6 @@
 # Fix the UI formating (Done)
 # TODO Make a better menu (In progress)
-# TODO Fix the exit game button and make it work
+# TODO Fix the exit game button and make it work(Done)
 # TODO Fix the guess entry format and button
 # TODO Implement a function that goes through a dictionary and displays hints 
 

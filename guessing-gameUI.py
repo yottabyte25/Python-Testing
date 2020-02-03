@@ -20,14 +20,39 @@ def app():
     menu_welcoming = tk.Label(root, text="Welcome to the guessing game!!!", font=("Impact", 32), fg = "green", bg = "black")
     menu_welcoming2 = tk.Label(root, text="This game is still in devolpment so please beware of bugs.", font=("Impact", 26), fg = "green", bg = "black")
     menu_welcoming3 = tk.Label(root, text="This is in its Alpha stage.", font=("Impact", 26), fg = "green", bg = "black")
+    Licence_Label = tk.Label(root, text="By: yottabyte25", font=("Impact", 32), fg = "green", bg = "black")
     menu_welcoming4 = tk.Label(root, text = "Press the button below to begin", font=("Impact", 26), fg = "green", bg = "black")
+    Licence_Label2 = tk.Label(root, text="If you wish too view the credits click the view button below", font=("Impact", 32), fg = "green", bg = "black")
+    Licence_Button1 = tk.Button(root, text = "View", bd = 25, command = game_credits)
     begin_button = tk.Button(root, text = "Begin", bd = 25, command = new_game)
     
-    menu_welcoming.grid(row = 1, column = 1)
-    menu_welcoming2.grid(row = 2, column = 1)
-    menu_welcoming3.grid(row = 3, column = 1)
-    menu_welcoming4.grid(row = 4, column = 1)
-    begin_button.grid(row = 5, column = 3, columnspan = 2)
+    menu_welcoming.grid(row = 1)
+    menu_welcoming2.grid(row = 2)
+    menu_welcoming3.grid(row = 3)
+    menu_welcoming4.grid(row = 5)
+    begin_button.grid(row = 7, column = 3, columnspan = 2)
+    Licence_Label.grid(row = 4)
+    Licence_Label2.grid(row = 6)
+    Licence_Button1.grid(row = 8, column = 3)
+
+def game_credits():
+    Credit_Label = tk.Label(root, text = "Game Logic:", font=("Impact", 32), fg = "green", bg = "black")
+    Credit_Label2 = tk.Label(root, text = "yottabyte25", font=("Impact", 32), fg = "green", bg = "black")
+    Credit_Label3 = tk.Label(root, text = "Menu and Design:", font=("Impact", 32), fg = "green", bg = "black")
+    Credit_Label4 = tk.Label(root, text = "yottabyte25", font=("Impact", 32), fg = "green", bg = "black")
+    Copyright_Label = tk.Label(root, text = "Copyright © 2020 by yottabyte25", font=("Impact", 32), fg = "green", bg = "black")
+    Copyright_Label2 = tk.Label(root, text = "All rights Reserved", font=("Impact", 32), fg = "green", bg = "black")
+    Credit_Label5 = tk.Label(root, text = "To go back to the main menu click the back button below", font=("Impact", 32), fg = "green", bg = "black")
+    Back_Button = tk.Button(root, text = "Back", bd = 25, command = app)
+
+    Credit_Label.grid(row = 1)
+    Credit_Label2.grid(row = 2)
+    Credit_Label3.grid(row = 3)
+    Credit_Label4.grid(row = 4)
+    Credit_Label5.grid(row = 5)
+    Back_Button.grid(row = 6)
+    Copyright_Label.grid()
+    Copyright_Label2
 
 def new_game():
     # uses the input from the Entry box

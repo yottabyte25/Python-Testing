@@ -1,6 +1,6 @@
 # Fix the UI formating (Done)
 # TODO Make a better menu (In progress)
-# TODO Fix the exit game button and make it work
+# TODO Fix the exit game button and make it work(Done)
 # TODO Fix the guess entry format and button
 # TODO Implement a function that goes through a dictionary and displays hints 
 
@@ -16,12 +16,12 @@ import tkinter as tk
 
 root = tk.Tk()
 
-def app():
+def app_menu():
     menu_welcoming = tk.Label(root, text="Welcome to the guessing game!!!", font=("Impact", 32), fg = "green", bg = "black")
     menu_welcoming2 = tk.Label(root, text="This game is still in devolpment so please beware of bugs.", font=("Impact", 26), fg = "green", bg = "black")
     menu_welcoming3 = tk.Label(root, text="This is in its Alpha stage.", font=("Impact", 26), fg = "green", bg = "black")
     Licence_Label = tk.Label(root, text="By: yottabyte25", font=("Impact", 32), fg = "green", bg = "black")
-    menu_welcoming4 = tk.Label(root, text = "Press the button below to begin", font=("Impact", 26), fg = "green", bg = "black")
+    menu_welcoming4 = tk.Label(root, text = "Press the 'begin' button below to begin", font=("Impact", 26), fg = "green", bg = "black")
     Licence_Label2 = tk.Label(root, text="If you wish too view the credits click the view button below", font=("Impact", 32), fg = "green", bg = "black")
     Licence_Button1 = tk.Button(root, text = "View", bd = 25, command = game_credits)
     begin_button = tk.Button(root, text = "Begin", bd = 25, command = new_game)
@@ -36,6 +36,17 @@ def app():
     Licence_Button1.grid(row = 8, column = 3)
 
 def game_credits():
+    '''    
+    menu_welcoming.destroy()
+    menu_welcoming2.destroy()
+    menu_welcoming3.destroy()
+    Licence_Label.destroy()
+    menu_welcoming4.destroy()
+    Licence_Label2.destroy()
+    Licence_Button1.destroy()
+    begin_button.destroy()
+    '''
+
     Credit_Label = tk.Label(root, text = "Game Logic:", font=("Impact", 32), fg = "green", bg = "black")
     Credit_Label2 = tk.Label(root, text = "yottabyte25", font=("Impact", 32), fg = "green", bg = "black")
     Credit_Label3 = tk.Label(root, text = "Menu and Design:", font=("Impact", 32), fg = "green", bg = "black")
@@ -43,7 +54,7 @@ def game_credits():
     Copyright_Label = tk.Label(root, text = "Copyright © 2020 by yottabyte25", font=("Impact", 32), fg = "green", bg = "black")
     Copyright_Label2 = tk.Label(root, text = "All rights Reserved", font=("Impact", 32), fg = "green", bg = "black")
     Credit_Label5 = tk.Label(root, text = "To go back to the main menu click the back button below", font=("Impact", 32), fg = "green", bg = "black")
-    Back_Button = tk.Button(root, text = "Back", bd = 25, command = app)
+    Back_Button = tk.Button(root, text = "Back", bd = 25, command = app_menu)
 
     Credit_Label.grid(row = 1)
     Credit_Label2.grid(row = 2)
@@ -52,7 +63,7 @@ def game_credits():
     Credit_Label5.grid(row = 5)
     Back_Button.grid(row = 6)
     Copyright_Label.grid()
-    Copyright_Label2
+    Copyright_Label2.grid()
 
 def new_game():
     # uses the input from the Entry box
@@ -144,7 +155,7 @@ def new_game():
     B1.grid(row = 2, column = 2)
 
 def exitgame():
-    pass
+    root.destroy()
 
 #title
 root.title("Guessing game")
@@ -154,7 +165,7 @@ root.title("Guessing game")
 menubar = tk.Menu(root)
 filemenu = tk.Menu(menubar, tearoff=0)
 menubar.add_cascade(label="Quick Menu", menu=filemenu)
-filemenu.add_command(label="New Game", command=app)
+filemenu.add_command(label="New Game", command=app_menu)
 filemenu.add_command(label="Exit Game", command=exitgame)
 root.config(menu=menubar)
 

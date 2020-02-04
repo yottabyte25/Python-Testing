@@ -27,10 +27,10 @@ def application():
             retrieved_inp = E1.get()
             if retrieved_inp == "d":
                 secret_word = "delta"
-                Label_D = tk.Label(root, text="The word begins with the letter you typed", font=("Impact", 16), fg = "green", bg = "black")
+                Label_D = tk.Label(root, text="The word begins with the letter you typed", font=("Impact", 26), fg = "green", bg = "black")
                 E3 = tk.Entry(root, bd = 5)
                 guess_inp = E3.get()
-                Button_0 = tk.Button(root, text = "Enter", font=("Courier", 8), padx = 10, pady = 10, bd = 3, command = guess_inp, fg = "green", bg = "black")
+                Button_0 = tk.Button(root, text = "Enter", font=("Impact", 8), padx = 10, pady = 10, bd = 3, command = guess_inp)
 
                 E3.grid(row = 3, column = 1, columnspan = 1)
                 Label_D.grid(row = 3, column = 0, columnspan = 1)
@@ -39,9 +39,9 @@ def application():
                     if guess_count < guess_limit:
                         guess_count +=1
                         guess_box = tk.Entry(root, bd = 5)
-                        guess_label = tk.Label(root, text = "Guess", font=("Courier", 18))
+                        guess_label = tk.Label(root, text = "Guess", font=("Impact", 18), fg = "green", bg = "black")
                         inp = guess_box.get()
-                        Button_1 = tk.Button(root, text = "Enter", font=("Courier", 8), padx = 10, pady = 10, bd = 3, command = inp)
+                        Button_1 = tk.Button(root, text = "Enter", font=("Impact", 8), padx = 10, pady = 10, bd = 3, command = inp)
                         guess_box.grid(row = 4, column = 1)
                         Button_1.grid(row = 4, column = 2)
                         guess_label.grid(row = 4, column = 0, columnspan = 1)
@@ -96,10 +96,10 @@ def application():
                     lose_label = tk.Label(root, text="You lost")
                     lose_label.grid(row = 7, column = 1)
         #The welcoming and prompt to start the game
-        welcoming = tk.Label(root, text = "Welcome to the guessing Game!!!", font=("Courier", 22))
-        prompt_E1 = tk.Label(root, text = "Type in one of the letters: d,s,a", font=("Courier", 20))
+        welcoming = tk.Label(root, text = "Welcome to the guessing Game!!!", font=("Impact", 22), fg = "green", bg = "black")
+        prompt_E1 = tk.Label(root, text = "Type in one of the letters: d,s,a", font=("Impact", 20), fg = "green", bg = "black")
         E1 = tk.Entry(root, bd = 5)
-        B1 = tk.Button(root, text="Enter", padx = 10, pady = 10, bd = 3, font=("Courier", 8), command = use_input)
+        B1 = tk.Button(root, text="Enter", padx = 10, pady = 10, bd = 3, font=("Impact", 8), command = use_input)
         
         welcoming.grid(row = 1, column = 0, columnspan = 1)
         prompt_E1.grid(row = 2, column = 0, columnspan = 1)

@@ -1,22 +1,35 @@
-class Employee:
-   'Common base class for all employees'
-   empCount = 0
 
-   def __init__(self, name, salary):
+class School:
+   def __init__(self, total):
+      self.total = total
+
+   def get_total(self):
+      return self.total
+
+   def add(self):
+      for total in self.total:
+         total.get_total += 1
+
+s = School(0)
+
+class Student:
+   def __init__(self, name, age, grade):
       self.name = name
-      self.salary = salary
-      Employee.empCount += 1
+      self.age = age
+      self.grade = grade
    
-   def displayCount(self):
-     print("Total Employee %d" % Employee.empCount)
+class Course:
+   def __init__(self, subject, students, max_students):
+      self.subject = subject
+      self.students = students
+      self.max_students = max_students
 
-   def displayEmployee(self):
-      print("Name : ", self.name,  ", Salary: ", self.salary)
+def Greeting():
+      question = input("Do you want to join the school? Type Yes or No: ")
+      if question == "Yes":
+         School.add
+         print(s.total)
+      elif question == "No":
+         return Greeting
 
-"This would create first object of Employee class"
-emp1 = Employee("Zara", 2000)
-"This would create second object of Employee class"
-emp2 = Employee("Manni", 5000)
-emp1.displayEmployee()
-emp2.displayEmployee()
-print("Total Employee %d" % Employee.empCount)
+Greeting()

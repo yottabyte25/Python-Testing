@@ -1,21 +1,21 @@
 class School1:
-    def __init__(self, rating, total):
+    def __init__(self, rating):
         self.rating = rating
-        self.total = total
-
-    def get_total(self):
-        return self.total
+        
+    #def get_total(self):
+    #    return self.total
     
     def get_rating(self):
         return self.rating
-    
-    def add(self):
-        for total in self.total:
-            total.get_total() + 1
 
-s = School1(4.5, 400)
+    total = 324
+
+    def add(self):
+        total = 324
+        total + 1
+s = School1(4.7)
 s.add()
-print(s.total)
+print(s.get_rating)
 
 class S1_Student:
     def __init__(self, name, age, grade):

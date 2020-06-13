@@ -1,3 +1,4 @@
+import tkinter as tk
 
 class School:
    def __init__(self, total):
@@ -24,12 +25,9 @@ class Course:
       self.students = students
       self.max_students = max_students
 
-def Greeting():
-      question = input("Do you want to join the school? Type Yes or No: ")
-      if question == "Yes":
-         School.add
-         print(s.total)
-      elif question == "No":
-         return Greeting
+root = tk.Tk()
 
-Greeting()
+def Choose():
+   pass
+
+root.mainloop()
